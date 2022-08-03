@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="infotedbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="asistencia_facilitador">
+    <Key>
+      <PropertyRef Name="id_asis_facilitador" />
+    </Key>
+    <Property Name="id_asis_facilitador" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cedula_facilitador" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="codigo_materia" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="hora_llegada" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="fecha" Type="DateTime" Precision="0" />
+    <Property Name="hora_salida" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="asistencia_participante">
+    <Key>
+      <PropertyRef Name="id_asis_participante" />
+    </Key>
+    <Property Name="id_asis_participante" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cedula_participante" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="codigo_materia" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="aula" Type="String" MaxLength="110" FixedLength="false" Unicode="false" />
+    <Property Name="hora_llegada" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="fecha" Type="DateTime" Precision="0" />
+    <Property Name="hora_salida" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="usuario">
+    <Key>
+      <PropertyRef Name="id_usuario" />
+    </Key>
+    <Property Name="id_usuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="usuario1" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="clave" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="infotedbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="asistencia_facilitador" EntityType="Self.asistencia_facilitador" />
+    <EntitySet Name="asistencia_participante" EntityType="Self.asistencia_participante" />
+    <EntitySet Name="usuario" EntityType="Self.usuario" />
+    <FunctionImport Name="Rango_Fecha_Facilitador" ReturnType="Collection(infotedbModel.Rango_Fecha_Facilitador_Result)">
+      <Parameter Name="Fecha1" Mode="In" Type="DateTime" />
+      <Parameter Name="Fecha2" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="Rango_Fecha_Participante" ReturnType="Collection(infotedbModel.Rango_Fecha_Participante_Result)">
+      <Parameter Name="Fecha1" Mode="In" Type="DateTime" />
+      <Parameter Name="Fecha2" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <EntitySet Name="correos" EntityType="infotedbModel.correos" />
+  </EntityContainer>
+  <ComplexType Name="Rango_Fecha_Facilitador_Result">
+    <Property Type="Int32" Name="id_asis_facilitador" Nullable="false" />
+    <Property Type="String" Name="cedula_facilitador" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="codigo_materia" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="hora_llegada" Nullable="true" MaxLength="12" />
+    <Property Type="DateTime" Name="fecha" Nullable="true" />
+    <Property Type="String" Name="hora_salida" Nullable="true" MaxLength="12" />
+  </ComplexType>
+  <ComplexType Name="Rango_Fecha_Participante_Result">
+    <Property Type="Int32" Name="id_asis_participante" Nullable="false" />
+    <Property Type="String" Name="cedula_participante" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="codigo_materia" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="aula" Nullable="true" MaxLength="110" />
+    <Property Type="String" Name="hora_llegada" Nullable="true" MaxLength="12" />
+    <Property Type="DateTime" Name="fecha" Nullable="true" />
+    <Property Type="String" Name="hora_salida" Nullable="true" MaxLength="12" />
+  </ComplexType>
+  <EntityType Name="correos">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="correo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

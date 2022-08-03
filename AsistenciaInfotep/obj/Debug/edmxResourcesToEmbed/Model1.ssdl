@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="infotedbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="asistencia_facilitador">
+    <Key>
+      <PropertyRef Name="id_asis_facilitador" />
+    </Key>
+    <Property Name="id_asis_facilitador" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cedula_facilitador" Type="varchar" MaxLength="20" />
+    <Property Name="codigo_materia" Type="varchar" MaxLength="20" />
+    <Property Name="hora_llegada" Type="varchar" MaxLength="12" />
+    <Property Name="fecha" Type="date" />
+    <Property Name="hora_salida" Type="varchar" MaxLength="12" />
+  </EntityType>
+  <EntityType Name="asistencia_participante">
+    <Key>
+      <PropertyRef Name="id_asis_participante" />
+    </Key>
+    <Property Name="id_asis_participante" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cedula_participante" Type="varchar" MaxLength="20" />
+    <Property Name="codigo_materia" Type="varchar" MaxLength="20" />
+    <Property Name="aula" Type="varchar" MaxLength="110" />
+    <Property Name="hora_llegada" Type="varchar" MaxLength="12" />
+    <Property Name="fecha" Type="date" />
+    <Property Name="hora_salida" Type="varchar" MaxLength="12" />
+  </EntityType>
+  <EntityType Name="correos">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="30" />
+    <Property Name="correo" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="usuario">
+    <Key>
+      <PropertyRef Name="id_usuario" />
+    </Key>
+    <Property Name="id_usuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="usuario" Type="varchar" MaxLength="30" />
+    <Property Name="clave" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <Function Name="Rango_Fecha_Facilitador" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Fecha1" Type="date" Mode="In" />
+    <Parameter Name="Fecha2" Type="date" Mode="In" />
+  </Function>
+  <Function Name="Rango_Fecha_Participante" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Fecha1" Type="date" Mode="In" />
+    <Parameter Name="Fecha2" Type="date" Mode="In" />
+  </Function>
+  <EntityContainer Name="infotedbModelStoreContainer">
+    <EntitySet Name="asistencia_facilitador" EntityType="Self.asistencia_facilitador" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="asistencia_participante" EntityType="Self.asistencia_participante" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="correos" EntityType="Self.correos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="usuario" EntityType="Self.usuario" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

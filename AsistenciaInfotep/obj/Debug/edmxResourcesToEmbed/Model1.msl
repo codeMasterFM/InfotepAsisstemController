@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="infotedbModelStoreContainer" CdmEntityContainer="infotedbEntities">
+    <EntitySetMapping Name="asistencia_facilitador">
+      <EntityTypeMapping TypeName="infotedbModel.asistencia_facilitador">
+        <MappingFragment StoreEntitySet="asistencia_facilitador">
+          <ScalarProperty Name="id_asis_facilitador" ColumnName="id_asis_facilitador" />
+          <ScalarProperty Name="cedula_facilitador" ColumnName="cedula_facilitador" />
+          <ScalarProperty Name="codigo_materia" ColumnName="codigo_materia" />
+          <ScalarProperty Name="hora_llegada" ColumnName="hora_llegada" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="hora_salida" ColumnName="hora_salida" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="asistencia_participante">
+      <EntityTypeMapping TypeName="infotedbModel.asistencia_participante">
+        <MappingFragment StoreEntitySet="asistencia_participante">
+          <ScalarProperty Name="id_asis_participante" ColumnName="id_asis_participante" />
+          <ScalarProperty Name="cedula_participante" ColumnName="cedula_participante" />
+          <ScalarProperty Name="codigo_materia" ColumnName="codigo_materia" />
+          <ScalarProperty Name="aula" ColumnName="aula" />
+          <ScalarProperty Name="hora_llegada" ColumnName="hora_llegada" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="hora_salida" ColumnName="hora_salida" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usuario">
+      <EntityTypeMapping TypeName="infotedbModel.usuario">
+        <MappingFragment StoreEntitySet="usuario">
+          <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+          <ScalarProperty Name="usuario1" ColumnName="usuario" />
+          <ScalarProperty Name="clave" ColumnName="clave" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Rango_Fecha_Facilitador" FunctionName="infotedbModel.Store.Rango_Fecha_Facilitador">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="infotedbModel.Rango_Fecha_Facilitador_Result">
+          <ScalarProperty Name="id_asis_facilitador" ColumnName="id_asis_facilitador" />
+          <ScalarProperty Name="cedula_facilitador" ColumnName="cedula_facilitador" />
+          <ScalarProperty Name="codigo_materia" ColumnName="codigo_materia" />
+          <ScalarProperty Name="hora_llegada" ColumnName="hora_llegada" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="hora_salida" ColumnName="hora_salida" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Rango_Fecha_Participante" FunctionName="infotedbModel.Store.Rango_Fecha_Participante">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="infotedbModel.Rango_Fecha_Participante_Result">
+          <ScalarProperty Name="id_asis_participante" ColumnName="id_asis_participante" />
+          <ScalarProperty Name="cedula_participante" ColumnName="cedula_participante" />
+          <ScalarProperty Name="codigo_materia" ColumnName="codigo_materia" />
+          <ScalarProperty Name="aula" ColumnName="aula" />
+          <ScalarProperty Name="hora_llegada" ColumnName="hora_llegada" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="hora_salida" ColumnName="hora_salida" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="correos">
+      <EntityTypeMapping TypeName="infotedbModel.correos">
+        <MappingFragment StoreEntitySet="correos">
+          <ScalarProperty Name="correo" ColumnName="correo" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
