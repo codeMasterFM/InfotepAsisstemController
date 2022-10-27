@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TecladoNum));
             this.texcodigo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.BTNEntrar = new System.Windows.Forms.Button();
@@ -44,32 +46,34 @@
             this.BTN3 = new System.Windows.Forms.Button();
             this.BTN2 = new System.Windows.Forms.Button();
             this.BTN1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // texcodigo
             // 
-            this.texcodigo.Location = new System.Drawing.Point(117, 61);
+            this.texcodigo.Font = new System.Drawing.Font("Cascadia Code SemiBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.texcodigo.Location = new System.Drawing.Point(146, 118);
             this.texcodigo.Name = "texcodigo";
-            this.texcodigo.Size = new System.Drawing.Size(180, 20);
+            this.texcodigo.Size = new System.Drawing.Size(180, 30);
             this.texcodigo.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Cascadia Code SemiBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(138, 25);
+            this.label1.Location = new System.Drawing.Point(184, 72);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(145, 18);
+            this.label1.Size = new System.Drawing.Size(199, 25);
             this.label1.TabIndex = 1;
             this.label1.Text = "Ingrese su Codigo";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(28)))), ((int)(((byte)(50)))));
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.panel2);
@@ -78,14 +82,27 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(471, 376);
+            this.panel1.Size = new System.Drawing.Size(556, 534);
             this.panel1.TabIndex = 2;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Cascadia Code SemiBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(3, 3);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(98, 36);
+            this.button2.TabIndex = 11;
+            this.button2.Text = "Atras";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(303, 59);
+            this.button1.Font = new System.Drawing.Font("Cascadia Code SemiBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(332, 112);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(66, 23);
+            this.button1.Size = new System.Drawing.Size(66, 43);
             this.button1.TabIndex = 11;
             this.button1.Text = "C";
             this.button1.UseVisualStyleBackColor = true;
@@ -93,6 +110,7 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.Controls.Add(this.BTNEntrar);
             this.panel2.Controls.Add(this.BTN0);
             this.panel2.Controls.Add(this.BTN9);
@@ -104,16 +122,17 @@
             this.panel2.Controls.Add(this.BTN3);
             this.panel2.Controls.Add(this.BTN2);
             this.panel2.Controls.Add(this.BTN1);
-            this.panel2.Location = new System.Drawing.Point(55, 97);
+            this.panel2.Font = new System.Drawing.Font("Cascadia Code SemiBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel2.Location = new System.Drawing.Point(131, 178);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(314, 229);
+            this.panel2.Size = new System.Drawing.Size(314, 315);
             this.panel2.TabIndex = 2;
             // 
             // BTNEntrar
             // 
-            this.BTNEntrar.Location = new System.Drawing.Point(181, 135);
+            this.BTNEntrar.Location = new System.Drawing.Point(96, 215);
             this.BTNEntrar.Name = "BTNEntrar";
-            this.BTNEntrar.Size = new System.Drawing.Size(75, 65);
+            this.BTNEntrar.Size = new System.Drawing.Size(156, 56);
             this.BTNEntrar.TabIndex = 10;
             this.BTNEntrar.Text = "Registrar";
             this.BTNEntrar.UseVisualStyleBackColor = true;
@@ -121,9 +140,9 @@
             // 
             // BTN0
             // 
-            this.BTN0.Location = new System.Drawing.Point(100, 156);
+            this.BTN0.Location = new System.Drawing.Point(15, 215);
             this.BTN0.Name = "BTN0";
-            this.BTN0.Size = new System.Drawing.Size(75, 23);
+            this.BTN0.Size = new System.Drawing.Size(75, 56);
             this.BTN0.TabIndex = 9;
             this.BTN0.Text = "0";
             this.BTN0.UseVisualStyleBackColor = true;
@@ -131,9 +150,9 @@
             // 
             // BTN9
             // 
-            this.BTN9.Location = new System.Drawing.Point(181, 107);
+            this.BTN9.Location = new System.Drawing.Point(177, 146);
             this.BTN9.Name = "BTN9";
-            this.BTN9.Size = new System.Drawing.Size(75, 23);
+            this.BTN9.Size = new System.Drawing.Size(75, 54);
             this.BTN9.TabIndex = 8;
             this.BTN9.Text = "9";
             this.BTN9.UseVisualStyleBackColor = true;
@@ -141,9 +160,9 @@
             // 
             // BTN8
             // 
-            this.BTN8.Location = new System.Drawing.Point(100, 107);
+            this.BTN8.Location = new System.Drawing.Point(96, 146);
             this.BTN8.Name = "BTN8";
-            this.BTN8.Size = new System.Drawing.Size(75, 23);
+            this.BTN8.Size = new System.Drawing.Size(75, 54);
             this.BTN8.TabIndex = 7;
             this.BTN8.Text = "8";
             this.BTN8.UseVisualStyleBackColor = true;
@@ -151,9 +170,9 @@
             // 
             // BTN7
             // 
-            this.BTN7.Location = new System.Drawing.Point(15, 107);
+            this.BTN7.Location = new System.Drawing.Point(15, 146);
             this.BTN7.Name = "BTN7";
-            this.BTN7.Size = new System.Drawing.Size(75, 23);
+            this.BTN7.Size = new System.Drawing.Size(75, 54);
             this.BTN7.TabIndex = 6;
             this.BTN7.Text = "7";
             this.BTN7.UseVisualStyleBackColor = true;
@@ -161,9 +180,9 @@
             // 
             // BTN6
             // 
-            this.BTN6.Location = new System.Drawing.Point(177, 63);
+            this.BTN6.Location = new System.Drawing.Point(177, 83);
             this.BTN6.Name = "BTN6";
-            this.BTN6.Size = new System.Drawing.Size(75, 23);
+            this.BTN6.Size = new System.Drawing.Size(75, 47);
             this.BTN6.TabIndex = 5;
             this.BTN6.Text = "6";
             this.BTN6.UseVisualStyleBackColor = true;
@@ -171,9 +190,9 @@
             // 
             // BTN5
             // 
-            this.BTN5.Location = new System.Drawing.Point(100, 63);
+            this.BTN5.Location = new System.Drawing.Point(96, 83);
             this.BTN5.Name = "BTN5";
-            this.BTN5.Size = new System.Drawing.Size(75, 23);
+            this.BTN5.Size = new System.Drawing.Size(75, 47);
             this.BTN5.TabIndex = 4;
             this.BTN5.Text = "5";
             this.BTN5.UseVisualStyleBackColor = true;
@@ -181,9 +200,9 @@
             // 
             // BTN4
             // 
-            this.BTN4.Location = new System.Drawing.Point(15, 63);
+            this.BTN4.Location = new System.Drawing.Point(15, 83);
             this.BTN4.Name = "BTN4";
-            this.BTN4.Size = new System.Drawing.Size(75, 23);
+            this.BTN4.Size = new System.Drawing.Size(75, 47);
             this.BTN4.TabIndex = 3;
             this.BTN4.Text = "4";
             this.BTN4.UseVisualStyleBackColor = true;
@@ -193,7 +212,7 @@
             // 
             this.BTN3.Location = new System.Drawing.Point(177, 17);
             this.BTN3.Name = "BTN3";
-            this.BTN3.Size = new System.Drawing.Size(75, 23);
+            this.BTN3.Size = new System.Drawing.Size(75, 51);
             this.BTN3.TabIndex = 2;
             this.BTN3.Text = "3";
             this.BTN3.UseVisualStyleBackColor = true;
@@ -203,7 +222,7 @@
             // 
             this.BTN2.Location = new System.Drawing.Point(96, 17);
             this.BTN2.Name = "BTN2";
-            this.BTN2.Size = new System.Drawing.Size(75, 23);
+            this.BTN2.Size = new System.Drawing.Size(75, 51);
             this.BTN2.TabIndex = 1;
             this.BTN2.Text = "2";
             this.BTN2.UseVisualStyleBackColor = true;
@@ -213,27 +232,17 @@
             // 
             this.BTN1.Location = new System.Drawing.Point(15, 17);
             this.BTN1.Name = "BTN1";
-            this.BTN1.Size = new System.Drawing.Size(75, 23);
+            this.BTN1.Size = new System.Drawing.Size(75, 51);
             this.BTN1.TabIndex = 0;
             this.BTN1.Text = "1";
             this.BTN1.UseVisualStyleBackColor = true;
             this.BTN1.Click += new System.EventHandler(this.BTN1_Click);
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(3, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Atras";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // TecladoNum
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(471, 376);
+            this.ClientSize = new System.Drawing.Size(556, 534);
             this.Controls.Add(this.panel1);
             this.Name = "TecladoNum";
             this.Text = "TecladoNum";

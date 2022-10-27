@@ -100,5 +100,10 @@ namespace infotepAssistControl.FronEnd_Facilitador
             this.panel2.Visible = true;
             texcedula.Select();
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
