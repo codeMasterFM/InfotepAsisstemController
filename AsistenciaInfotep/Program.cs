@@ -18,7 +18,7 @@ namespace infotepAssistControl
           ///  Application.SetCompatibleTextRenderingDefault(false);
           // Application.Run(new Views.AssistLogin());
           //  Application.Run(new FronEnd_Facilitador.FrontFacilitador());
-            Application.Run(new infotepAssistControl.Gmail());
+            Application.Run(new infotepAssistControl.FronEnd_Facilitador.FrontFacilitador());
         }
     }
 }

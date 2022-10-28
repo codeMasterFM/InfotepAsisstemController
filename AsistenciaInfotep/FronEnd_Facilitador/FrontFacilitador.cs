@@ -105,5 +105,10 @@ namespace infotepAssistControl.FronEnd_Facilitador
         {
 
         }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

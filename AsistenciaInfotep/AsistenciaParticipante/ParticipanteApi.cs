@@ -24,7 +24,7 @@ namespace infotepAssistControl.AsistenciaParticipante
 
             // Consulto la API pasandole los parametros de codigo y cedula.
             // Me retorna el maestro asignado a una materia junto con su codigo y cedula
-            var url = $"http://localhost/ApiAssisControlInfotep/Api-Cursos/public/api/consultaParticipante/{cedula}";
+            var url = $"https://localhost:7225/api/AsistenciaParticipantes/{cedula}";
             using (var httpClient = new HttpClient())
             {
 
@@ -96,7 +96,7 @@ namespace infotepAssistControl.AsistenciaParticipante
         public static async Task<bool> GetCedulaParticipante(string cedula)
         {
 
-            var url = $"http://localhost/ApiAssisControlInfotep/Api-Cursos/public/api/consultaParticipante/{cedula}";
+            var url = $"https://localhost:7225/api/participantes/{cedula}";
 
             using (var httpClient = new HttpClient())
             {
@@ -114,7 +114,7 @@ namespace infotepAssistControl.AsistenciaParticipante
                         var respuestaString = await respuesta.Content.ReadAsStringAsync();
 
                         // Convierto la respuesta del API en una lista de objetos Dinamico
-                        var facilitador = JsonConvert.DeserializeObject<List<dynamic>>(respuestaString);
+                        var facilitador = JsonConvert.DeserializeObject<List<string>>(respuestaString);
 
                         {
                             foreach (dynamic item in facilitador)
